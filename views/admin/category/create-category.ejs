@@ -1,0 +1,40 @@
+<%-include('../header')%>
+    <div class="container"
+        style="position: absolute; z-index: -1; display: inline-block;width: 1200px; margin-left: 35px;">
+        <form action="" method="POST">
+            <legend style="font-weight: 600;">THÊM MỚI DANH MỤC</legend>
+            <div class="row">
+                
+                <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+                    <div class="form-group">
+                        <label style="font-weight: 600; " for="">tên danh mục</label>
+                        <input type="text" class="form-control" name="name">
+                    </div>
+                </div>
+
+                    <div class="radio col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                        <label style="font-weight: 600;  margin-right: 20px">
+                            Trạng thái:  
+                        </label>
+                        <div>
+                            <input type="radio" name="status" value="1" checked >
+                           hiện
+                        
+                            <input type="radio"  style=" margin-left: 50px" name="status" value="0" >
+                            ẩn
+                        </div>
+                    </div>  
+                </div>
+                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                    
+                    <button type="submit" class="btn btn-primary w-50 ml-auto mt-4">thêm mới</button>
+                </div>
+                </div>
+                    
+                
+            </div>
+        </form>
+    </div>
+
+
+    <%-include('../footer')%>

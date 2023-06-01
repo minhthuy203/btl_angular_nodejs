@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/summernote/summernote.min.css">
+  <style>
+    body {
+      font-family: "Lato", sans-serif;
+      width: 1200px
+    }
+
+    .sidebar {
+      height: 100%;
+      width: 200px;
+      position: fixed;
+      z-index: -1;
+      top: 0;
+      left: 0px;
+      background-color: darkslategrey;
+      overflow-x: hidden;
+      /* transition:; */
+      padding-top: 60px;
+      /* background-color: #111; */
+
+    }
+
+    .sidebar a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 20px;
+      color: antiquewhite;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidebar>a:hover {
+      color: cadetblue;
+    }
+
+
+    /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+    @media screen and (max-height: 450px) {
+      .sidebar {
+        padding-top: 15px;
+      }
+
+      .sidebar a {
+        font-size: 14px;
+      }
+        
+    }
+  
+
+
+
+    /* profile */
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      max-width: 300px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .title {
+      color: grey;
+      font-size: 18px;
+    }
+
+    button {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 8px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+      font-size: 18px;
+    }
+
+    a {
+      text-decoration: none;
+      font-size: 22px;
+      color: black;
+    }
+
+    button:hover,
+    a:hover {
+      opacity: 0.7;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-secondary " style="position: fixed; top: 0; right: 0; left:0; width: 100%">
+      <a class="navbar-brand" href="/" style="color: aqua;">ADMIN <i class="fa-solid fa-screwdriver-wrench"></i></a>
+      <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+        aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+<div class="btn-group ml-auto">
+  <button class="btn btn-secondary " type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true"
+      aria-expanded="false">
+      <i class="fa-solid fa-user"></i>
+  </button>
+  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="triggerId">
+    <a class="dropdown-item disabled" href="#"><%= userName %></a>
+    <h6 class="dropdown-header">admin </h6>
+    <div class="dropdown-divider"></div>
+    
+    <a class="dropdown-item" href="/logout"> <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout </a>
+  </div>
+</div>
+    </nav>
+  </div>
+  </nav>
+
+  <div class="" style="padding: 75px 0 0 200px; display: inline-flex;">
+
+    <div id="mySidebar" class="sidebar">
+      <a href="/category">Category</a>
+      <a href="/product">Product</a>
+      <a href="/create_admin">create-admin</a>
+    </div>

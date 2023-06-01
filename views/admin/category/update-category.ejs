@@ -1,0 +1,29 @@
+<%-include('../header')%>
+<div class="container" style="position: absolute; z-index: -1; display: inline-block;width: 1200px; margin-left: 35px;">
+    <form action="" method="POST" role="form">
+        <legend>sửa danh mục</legend>
+    
+        <div class="form-group">
+            <label for="">tên danh mục</label>
+            <input type="text" class="form-control" name="name"  value="<%= data.name%>">
+        </div>
+    
+        <div class="radio">
+            <label style="font-weight: 600;  margin-right: 20px">
+                Trạng thái:  
+            </label>
+            <div>
+                <input type="radio" name="status" value="1" <%= data.status == 1 ? "checked" : '' %>>
+               hiện
+            
+                <input type="radio"  style=" margin-left: 50px" name="status" value="0" <%= data.status == 0 ? "checked" : '' %> >
+                ẩn
+            </div>
+        </div>
+    
+        <button type="submit" class="btn btn-primary">cập nhật</button>
+    </form>
+</div>
+
+
+<%-include('../footer')%>

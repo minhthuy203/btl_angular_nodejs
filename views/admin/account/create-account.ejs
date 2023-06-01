@@ -1,0 +1,30 @@
+<%- include('../header') %>
+<div class="table-responsive" style="position: absolute; z-index: -1; display: inline-block;width: 1100px; margin-left: 35px; width: 75%; ">
+    <form action="" method="post">
+        <div class="form-group">
+          <label for="">Họ và Tên</label>
+          <input type="text"
+            class="form-control" name="name" id=""placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="">Email</label>
+            <input type="email"
+              class="form-control" name="email" id=""placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="">Password</label>
+            <input type="password"
+              class="form-control" name="password" id=""placeholder="">
+          </div>
+          <div class="form-group">
+            <input type="hidden"
+              class="form-control" name="role" id=""placeholder="" value="admin">
+          </div>
+        
+    <button type="submit" class="btn btn-success">Tạo Tài Khoản</button>
+    
+    </form>
+    
+</div>
+
+<%- include('../footer') %>

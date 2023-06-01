@@ -1,0 +1,75 @@
+<%-include('../header')%>
+<div class="container" style="position: absolute; z-index: -1; display: inline-block;width: 1200px; margin-left: 35px;">
+    <form action="" method="POST" role="form" enctype="multipart/form-data">
+        <legend style="font-weight: 600;">CẬP NHẬT SẢN PHẨM</legend>
+        <div class="form-group">
+            <label style="font-weight: 600;" for="">tên sản phẩm</label>
+            <input type="text" class="form-control" name="name"  value="<%= data.name%>">
+        </div>
+    <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="form-group">
+                <label style="font-weight: 600;" for="">giá</label>
+                <input type="text" class="form-control" name="price"  value="<%= data.price%>">
+            </div>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="form-group">
+                <label style="font-weight: 600;" >giá KM</label>
+                <input type="text" class="form-control" name="sale_price"  value="<%= data.sale_price%>" <%= data.sale_price < data.price ? data.sale_price : data.price %>>
+            </div>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="form-group">
+                <label style="font-weight: 600;" for="">danh mục</label>
+                <select name="category_id" class="form-control">
+                    <option value="">chọn một</option>
+                    <% listcate.forEach((item)=> {%>
+                        <option value="<%= item.id%>" <%= data.category_id == item.id ? "selected" : '' %>>
+                            <%= item.name%>
+                        </option>
+                        <%}) %>
+                </select>
+            </div>
+        </div>
+        
+    </div>
+        
+        
+        <div class="row">
+            
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="form-group">
+                    <label style="font-weight: 600;" for="">chọn ảnh</label>
+                    <input type="file" class="form-control-file" name="image" id="" placeholder="" aria-describedby="fileHelpId" >
+                    <small id="fileHelpId" class="form-text text-muted">Help text</small>
+                  </div>
+            </div>
+        
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="radio">
+                <label style="font-weight: 600;  margin-right: 20px">
+                    Trạng thái:  
+                </label>
+                <div>
+                    <input type="radio" name="status" value="1" <%= data.status == 1 ? "checked" : '' %>>
+                   Còn Hàng
+                
+                    <input type="radio"  style=" margin-left: 50px" name="status" value="0" <%= data.status == 0 ? "checked" : '' %> >
+                    Hết Hàng
+                </div>
+            </div>
+        
+        </div>
+        
+    </div>
+    <button type="submit" class="btn btn-primary w-25 ">cập nhật</button>
+       
+    
+        
+    
+    </form>
+</div>
+
+
+<%-include('../footer')%>

@@ -1,0 +1,89 @@
+<%-include('../header')%>
+    <div class="container"
+        style="position: absolute; z-index: -1; display: inline-block;width: 1200px; margin-left: 50px; ">
+        <form action="" method="POST" role="form" enctype="multipart/form-data">
+            <legend style="font-weight: 600;">THÊM MỚI SẢN PHẨM</legend>
+            <div class="row">
+
+                <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                    <div class="form-group">
+                        <label style="font-weight: 600;" for="">danh mục</label>
+                        <select name="category_id" class="form-control" required="required">
+                            <option value="">chọn một</option>
+                            <% data.forEach((item)=> {%>
+                                <option value="<%= item.id%>">
+                                    <%= item.name%>
+                                </option>
+                                <%}) %>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label style="font-weight: 600;" for="">tên sản phẩm</label>
+                        <input type="text" class="form-control" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label  style="font-weight: 600;" for="">Mô tả sản phẩm</label>
+                        <textarea name="descirption" id="descirption" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div class="form-group">
+                        <label style="font-weight: 600;" for="">giá</label>
+                        <input type="text" class="form-control" name="price">
+                    </div>
+
+                    <div class="form-group">
+                        <label style="font-weight: 600;" for="">giá KM</label>
+                        <input type="text" class="form-control" name="sale_price">
+                    </div>
+
+                    <div class="radio">
+                        <label style="font-weight: 600;  margin-right: 20px">
+                            Trạng thái:
+                        </label>
+                        <div>
+                            <input type="radio" name="status" value="1" checked>
+                            Còn Hàng
+
+                            <input type="radio" style=" margin-left: 50px" name="status" value="0">
+                            Hết Hàng
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label style="font-weight: 600; margin-top: 40px;">ngày tạo:</label>
+                        <input type="date" name="created_at" value="">
+                    </div>
+                    <div class="form-group">
+                        <label style="font-weight: 600;" for="">ảnh</label>
+                        <input type="file" onChange="onChangeFile(this)" class="form-control-file" name="image" id="" placeholder=""
+                            aria-describedby="fileHelpId">
+                            <img src="" alt="" id="showImg" style="width:100%">
+                        <small id="fileHelpId" class="form-text text-muted">(vui lòng chọn ảnh minh họa)</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-4">thêm mới</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+
+    <%-include('../footer')%>
+        <script>
+            $("#descirption").summernote({
+                height: 200
+            });
+            function onChangeFile(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('#showImg').attr('src', e.target.result)
+                    };
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+        </script>

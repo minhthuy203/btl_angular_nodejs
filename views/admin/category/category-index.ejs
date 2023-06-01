@@ -1,0 +1,54 @@
+<div class="table-responsive" style="position: absolute; z-index: -1; display: inline-block;width: 1100px; margin-left: 35px; width: 75%; ">
+    <div class="container">
+    <div class="row">
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <a href="/create-category" class="btn btn-primary">thêm mới danh mục</a>
+    </div>
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <form action="" method="POST" role="form">
+            <div class="input-group">
+                <input type="text" class="form-control bg-light border small" placeholder="Nhập tên cần tìm..."
+                name="name">
+                <div>
+                    <button class="btn btn-primary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+</div>
+</div>
+        <table class="table table-hover mt-5">
+                <thead>
+                    <tr>
+                        <th>Mã danh mục</th>
+                        <th>Tên danh mục</th>
+                        <th>Trạng thái</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% data.forEach(function(item,key){%>
+                        <tr>
+                            <td>
+                                <%= (key+1)%>
+                            </td>
+                            <td>
+                                <%= item.name%>
+                            </td>
+                            <td>
+                                <%= item.status==0? 'ẩn' :'hiện'%>
+                            </td>
+                            <td>
+                                <a href="/delete-category/<%= item.id%>" class="btn btn-danger">xóa</a>
+                                <a href="/update-category/<%= item.id%>" class="btn btn-warning">sửa</a>
+                            </td>
+                        </tr>
+
+                        <% }) %>
+
+
+                </tbody>
+            </table>
+
+    </div>

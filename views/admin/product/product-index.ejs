@@ -1,0 +1,61 @@
+<div style="position: absolute; z-index: -1; display: inline-block;width: 1200px; margin-left: 35px; ">
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+
+        <a href="/create-product" class="btn btn-primary">thêm mới sản phẩm</a>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ml-5">
+            <form action="" method="POST" role="form">
+                <div class="input-group">
+                    <input type="text" class="form-control bg-light border small" placeholder="Nhập tên cần tìm..."
+                    name="name">
+                    <div>
+                        <button class="btn btn-primary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        
+    </div>
+
+    <hr>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Mã sản phẩm</th>
+                <th>danh mục sản phẩm</th>
+                <th>ảnh</th>
+                <th>tên sản phẩm</th>
+                <th>giá</th>
+                <th>giá KM</th>
+                <th>Trạng thái</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.forEach(function(item,key){%>
+                <tr>
+                    <td>
+                        <%= (key+1)%>
+                    </td>
+                    <td><%= item.cate_name%></td>
+
+                    <td><img src="./images/<%= item.image%>"  style="width: 50px; height: 50px" alt="" srcset=""></td>
+                    <td>
+                        <%= item.name%>
+                    </td>
+                    <td><%= item.price%></td>
+                    <td><%= item.sale_price == 0? null : item.sale_price && item.sale_price < item.sale_price%></td>
+                    <td>
+                        <%= item.status==0? 'hết hàng ' : 'còn hàng' %>
+                    </td>
+                    <td class='text-center'>
+                        <a href="/delete-product/<%= item.id%>" class="btn btn-danger">xóa</a>
+                        <a href="/update-product/<%= item.id%>" class="btn btn-warning">sửa</a>
+                    </td>
+                </tr>
+                <% }); %>
+
+        </tbody>
+    </table>
