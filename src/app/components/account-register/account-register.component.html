@@ -1,0 +1,77 @@
+<section class="page-header-area pt-10 pb-9" data-bg-color="#FFF3DA">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="page-header-st3-content text-center text-md-start">
+                    <ol class="breadcrumb justify-content-center justify-content-md-start">
+                        <li class="breadcrumb-item"><a class="text-dark" href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active text-dark" aria-current="page">Account</li>
+                    </ol>
+                    <h2 class="page-header-title">Account</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-space">
+    <div class="container">
+        <div class="row " >
+           
+            <div class="col-lg-6 m-auto">
+                <!--== Start Register Area Wrapper ==-->
+                <div class="alert alert-warning alert-dismissible fade show" role="alert" *ngIf="error">
+                    <strong>Cảnh báo!</strong> {{error}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                
+                <script>
+                  $(".alert").alert();
+                </script>
+                </div>
+                <div class="my-account-item-wrap">
+                    <div class="col-lg-6 m-auto">
+                    <h3 class="title">Register</h3>
+                    <div class="my-account-form">
+                        <form action="#" method="post" [formGroup]="formRegister" (click)="submitRegister()">
+                            <div class="form-group mb-6">
+                                <label for="register_username">Display Name<sup>*</sup></label>
+                                <input type="text" formControlName="name" id="register_username">
+                                <div *ngIf="f['name'].touched && f['name'].invalid && f['name'].errors" style="color:red">
+                                    <div *ngIf=" f['name'].errors['minlength']"> tên chưa đủ độ dài</div>
+                                    <div *ngIf=" f['name'].errors['maxlength']"> tên vượt quá độ dài cho chép</div>
+                                    <div *ngIf=" f['name'].errors['required']"> tên không hợp lệ</div>
+
+                                </div>
+                            </div>
+                            <div class="form-group mb-6">
+                                <label for="register_username">Email Address <sup>*</sup></label>
+                                <input type="email" formControlName="email" id="register_username">
+                                <div *ngIf="f['email'].touched && f['email'].invalid && f['email'].errors" style="color:red" >
+                                    <div *ngIf=" f['email'].errors['required']"> email không hợp lệ</div>
+                                    <div *ngIf="f['email'].errors['email']"> email không đúng định dạng</div>
+                                </div>
+                            </div>
+                            <div class="form-group mb-6">
+                                <label for="register_pwsd">Password <sup>*</sup></label>
+                                <input type="password" formControlName="password" id="register_pwsd">
+                                <div *ngIf="f['password'].touched && f['password'].invalid && f['password'].errors" style="color:red">
+                                    <div *ngIf=" f['password'].errors['required']"> mật khẩu không đúng</div>
+                                    <div *ngIf=" f['password'].errors['minlength']"> mật khẩu cần ít nhất 6 kí tự</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <p class="desc mb-4">Your personal data will be used to support your experience
+                                    throughout this website, to manage access to your account, and for other
+                                    purposes described in our privacy policy.</p>
+                                <button class="btn" [disabled] = "f['email'].errors || f['password'].errors">Register</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!--== End Register Area Wrapper ==-->
+            </div>
+        </div>
+    </div>
+</section>

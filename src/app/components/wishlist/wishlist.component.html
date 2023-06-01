@@ -1,0 +1,143 @@
+
+
+<body class="template-color-1">
+
+    <div class="main-wrapper">
+
+        <!-- Begin Loading Area -->
+        <div class="loading">
+            <div class="text-center middle">
+                <span class="loader">
+            <span class="loader-inner"></span>
+                </span>
+            </div>
+        </div>
+        <!-- Loading Area End Here -->
+
+        <!-- Begin Main Header Area -->
+       
+        <!-- Main Header Area End Here -->
+
+        <!-- Begin Yena's Breadcrumb Area -->
+        <div class="breadcrumb-area ">
+            <div class="container-fluid h-100">
+                <div class="breadcrumb-content h-100">
+                    <h2 class="text-capitalize mb-0">Wishlist</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active">Wishlist</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Yena's Breadcrumb Area End Here -->
+
+        <!--Begin Yena's Wishlist Area -->
+        <div class="yena-wishlist_area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <form action="javascript:void(0)">
+                            <div class="table-content table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="yena-product_remove">remove</th>
+                                            <th class="yena-product-thumbnail">images</th>
+                                            <th class="cart-product-name">Product</th>
+                                            <th class="yena-product-price">Unit Price</th>
+                                            <th class="yena-product-stock-status">Stock Status</th>
+                                            <th class="yena-cart_btn">add to cart</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let fa of favourites">
+                                            <td class="yena-product_remove" ><button (click)="removeFavourite(fa.id)"><i class="fa-solid fa-trash-can"  title="Remove"></i>
+                                            </button></td>
+                                            <td class="yena-product-thumbnail"><a href="javascript:void(0)"><img [src]="'http://localhost:4000/images/' + fa.image" style="width:60px"></a>
+                                            </td>
+                                            <td class="yena-product-name"><a href="javascript:void(0)">{{fa.name}}</a></td>
+                                            <td class="yena-product-price">
+                                                <span class="price"class="amount">{{fa.sale_price==0? fa.price : fa.sale_price}}</span>
+                                            </td>
+                                            <td class="yena-product-stock-status"><span class="in-stock">{{fa.status==0? "Out Stock" : "In Stock"}}</span></td>
+                                            <td class="yena-cart_btn"><button type="button" class="product-action-btn action-btn-cart"
+                                                data-bs-toggle="modal" data-bs-target="#action-CartAddModal"
+                                                (click)="addCart(fa)">
+                                                <span>Add to cart</span>
+                                            </button></td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Yena's Wishlist Area End Here -->
+
+        <!-- Begin Footer Area -->
+
+        <!-- Footer Area End Here -->
+
+        <!-- Scroll To Top Start -->
+        <a class="scroll-to-top" href=""><i class="lastudioicon-up-arrow"></i></a>
+        <!-- Scroll To Top End -->
+
+    </div>
+
+    <!-- JS
+============================================ -->
+
+    <!-- jQuery JS -->
+    <script src="https://htmldemo.net/yena/yena/assets/js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="https://htmldemo.net/yena/yena/assets/js/vendor/jquery-migrate-3.3.2.min.js"></script>
+    <!-- Modernizer JS -->
+    <script src="https://htmldemo.net/yena/yena/assets/js/vendor/modernizr-3.11.2.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://htmldemo.net/yena/yena/assets/js/vendor/bootstrap.bundle.min.js"></script>
+
+    <!-- Slick Slider JS -->
+    <script src="https://htmldemo.net/yena/yena/assets/js/plugins/slick.min.js"></script>
+    <!-- Barrating JS -->
+    <script src="https://htmldemo.net/yena/yena/assets/js/plugins/jquery.barrating.min.js"></script>
+    <!-- Counterup JS -->
+    <script src="https://htmldemo.net/yena/yena/assets/js/plugins/jquery.counterup.min.js"></script>
+    <!-- Nice Select JS -->
+    <script src="https://htmldemo.net/yena/yena/assets/js/plugins/jquery.nice-select.min.js"></script>
+    <!-- Sticky Sidebar JS -->
+    <script src="https://htmldemo.net/yena/yena/assets/js/plugins/jquery.sticky-sidebar.min.js"></script>
+    <!-- Jquery-ui JS -->
+    <script src="https://htmldemo.net/yena/yena/assets/js/plugins/jquery-ui.min.js"></script>
+    <script src="https://htmldemo.net/yena/yena/assets/js/plugins/jquery.ui.touch-punch.min.js"></script>
+    <!-- Theia Sticky Sidebar JS -->
+    <script src="https://htmldemo.net/yena/yena/assets/js/plugins/theia-sticky-sidebar.min.js"></script>
+    <!-- Waypoints JS -->
+    <script src="https://htmldemo.net/yena/yena/assets/js/plugins/waypoints.min.js"></script>
+    <!-- jQuery Zoom JS -->
+    <script src="https://htmldemo.net/yena/yena/assets/js/plugins/jquery.zoom.min.js"></script>
+    <!-- Timecircles JS -->
+    <script src="https://htmldemo.net/yena/yena/assets/js/plugins/timecircles.min.js"></script>
+    <!-- Jarallax JS -->
+    <script src="https://htmldemo.net/yena/yena/assets/js/plugins/jarallax.min.js"></script>
+    <!-- Magnific Popup JS -->
+    <script src="https://htmldemo.net/yena/yena/assets/js/plugins/jquery.magnific-popup.min.js"></script>
+    <!-- Wow JS -->
+    <script src="https://htmldemo.net/yena/yena/assets/js/plugins/wow.min.js"></script>
+    <!-- svg Inject JS -->
+    <script src="https://htmldemo.net/yena/yena/assets/js/plugins/svg-inject.min.js"></script>
+    <!-- Isotope JS -->
+    <script src="https://htmldemo.net/yena/yena/assets/js/plugins/isotope.pkgd.min.js"></script>
+    <!-- lightgallery JS -->
+    <script src="https://htmldemo.net/yena/yena/assets/js/plugins/lightgallery.min.js"></script>
+    <!-- imagesloaded JS -->
+    <script src="https://htmldemo.net/yena/yena/assets/js/plugins/imagesloaded.pkgd.min.js"></script>
+
+    <!-- Main JS -->
+    <script src="https://htmldemo.net/yena/yena/assets/js/main.js"></script>
+    <!-- <script src="https://htmldemo.net/yena/yena/assets/js/main.min.js"></script> -->
+
+</body>
+
